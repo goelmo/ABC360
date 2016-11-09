@@ -1,3 +1,8 @@
+<?php
+// process the login information and check with database
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
