@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,14 +9,41 @@
 </head>
 <body>
 
+<form action="login.php">
+	<input type="text" name="uid" placeholder="Username" ><br>
+	
+	<input type="password" name="password" placeholder="password" ><br>
+	<button types="submit">Login</button>
+</form>
+
+<?php
+	if(isset($_SESSION['id'])) {
+		echo $_SESSION['id'];
+		// u can do some thing using the id of sessions 
+	} else {
+		echo "you r not logged in! ";
+	}
+
+?>
+<br><br><br>
 
 <form action="signup.php" method="POST">
 	
-	<input type="text" name="first" placeholder="Firstname" >
-	<input type="text" name="last" placeholder="Lastname" >
-	<input type="text" name="uid" placeholder="Username" >
-	<input type="password" name="pwd" placeholder="Password" >
+	<input type="text" name="first" placeholder="Firstname" ><br>
+
+	<input type="text" name="last" placeholder="Lastname" ><br>
+
+	<input type="text" name="uid" placeholder="Username" ><br>
+	
+	<input type="email" name="email" placeholder="email" ><br>
+	
+	<input type="password" name="pwd" placeholder="Password" ><br>
 	<button type="submit">singup</button>
+</form>
+
+<br><br><br>
+<form action="lockout.php" method="POST">
+	<button>Log Out </button>
 </form>
 </body>
 </html>
