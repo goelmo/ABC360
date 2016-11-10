@@ -12,11 +12,14 @@
                 VALUES ( \"$name\", \"$lastName\", \"$email\", \"$password\" )";
     
     $result = mysqli_query($conn,$query);
-    var_dump($result);
-    
+//    var_dump($result);
+
+   header("Location:login.php");
+/*
     if($result) {
         header("Location:login.php");
      } else {
         die("Could not register ");
      }
+*/
 ?>
