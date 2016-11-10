@@ -6,15 +6,14 @@
      
     
 
-    $conn = mysql_connect('localhost', 'betty', '123', 'register'); 
+    $conn = mysqli_connect('localhost', 'betty', '123', 'register'); 
      
-    $query = "INSERT INTO registration ( name, last_name, email, password )
-    VALUES ( '$name', '$lastName', '$email', '$password' );";
+    $query = "INSERT INTO register ( name, last_name, email, password )
+                VALUES ( \"$name\", \"$lastName\", \"$email\", \"$password\" )";
     
-    $result = mysql_query($query);
-     
-    mysql_close();
-
+    $result = mysqli_query($conn,$query);
+    var_dump($result);
+    
     if($result) {
         header("Location:login.php");
      } else {
