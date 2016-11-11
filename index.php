@@ -1,21 +1,23 @@
+
 <?php
-	include 'header.php' ;
+	include '/includes/header.inc.php' ;
+	include 'dbh.php';
 ?>
-<form action="includes/login.inc.php">
-	<input type="text" name="uid" placeholder="Username" ><br>
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+	<input type="text" name="username" placeholder="Username" ><br>
 	
 	<input type="password" name="password" placeholder="password" ><br>
 	<button types="submit">Login</button>
 </form>
 
 <?php
-	if(isset($_SESSION['id'])) {
-		echo $_SESSION['id'];
-		// u can do some thing using the id of sessions 
+	$username = isset($_POST['username']) ? $_POST['username'] : '';
+	$password = isset($_POST['password']) ? $_POST['password'] : '';
+	if(check_username_and_password($username, $password)) {
+		echo "You have logged in";
 	} else {
-		echo "you r not logged in! ";
+		echo "Username and password don't match";
 	}
-
 ?>
 <br><br><br>
 
@@ -25,11 +27,12 @@
 
 	<input type="text" name="last" placeholder="Lastname" ><br>
 
-	<input type="text" name="uid" placeholder="Username" ><br>
+	<input type="text" name="username" placeholder="Username" ><br>
 	
 	<input type="email" name="email" placeholder="email" ><br>
 	
-	<input type="password" name="pwd" placeholder="Password" ><br>
+	<input type="password" name="password" placeholder="Password" ><br>
+
 	<button type="submit">singup</button>
 </form>
 
