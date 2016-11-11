@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="login.php">
+<form action="includes/login.inc.php">
 	<input type="text" name="uid" placeholder="Username" ><br>
 	
 	<input type="password" name="password" placeholder="password" ><br>
@@ -27,7 +27,7 @@
 ?>
 <br><br><br>
 
-<form action="signup.php" method="POST">
+<form action="includes/signup.inc.php" method="POST">
 	
 	<input type="text" name="first" placeholder="Firstname" ><br>
 
@@ -42,7 +42,7 @@
 </form>
 
 <br><br><br>
-<form action="lockout.php" method="POST">
+<form action="includes/lockout.inc.php" method="POST">
 	<button>Log Out </button>
 </form>
 </body>
